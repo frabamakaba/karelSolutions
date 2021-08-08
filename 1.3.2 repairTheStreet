@@ -1,26 +1,17 @@
 void repairTheStreet() {
-    repeat(3) {
+    repeat(9) {
         moveForward();
-    }
-    beeperInHole();
-    repeat(2) {
-        moveForward();
-    }
-    beeperInHole();
-    repeat(2) {
-        moveForward();
-    }
-    repeat(2) {
         beeperInHole();
-        moveForward();
     }
 }
 
 void beeperInHole() {
-    turnRight();
-    moveForward();
-    dropBeeper();
-    turnAround();
-    moveForward();
-    turnRight();
+    if (rightIsClear()) {
+        turnRight();
+        moveForward();
+        dropBeeper();
+        turnAround();
+        moveForward();
+        turnRight();
+    }
 }
