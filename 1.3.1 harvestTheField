@@ -1,0 +1,25 @@
+void harvestTheField() {
+    twoRows();
+    turnAround();
+    twoRows();
+}
+
+void twoRows() {
+    collectTheBeeper();
+    repeat(2) {
+        moveForward();
+				moveForward();
+        turnLeft();
+    }
+    collectTheBeeper();
+}
+
+void collectTheBeeper() {
+    repeat(4) {
+        moveForward();
+        pickBeeper();
+        turnRight();
+        moveForward();
+        turnLeft();
+    }
+}
