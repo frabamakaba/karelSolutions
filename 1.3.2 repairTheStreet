@@ -1,0 +1,26 @@
+void repairTheStreet() {
+    repeat(3) {
+        moveForward();
+    }
+    beeperInHole();
+    repeat(2) {
+        moveForward();
+    }
+    beeperInHole();
+    repeat(2) {
+        moveForward();
+    }
+    repeat(2) {
+        beeperInHole();
+        moveForward();
+    }
+}
+
+void beeperInHole() {
+    turnRight();
+    moveForward();
+    dropBeeper();
+    turnAround();
+    moveForward();
+    turnRight();
+}
