@@ -1,0 +1,37 @@
+void mowTheLawn() {
+    takeFiveRows();
+    takeRow();
+    moveForward();
+}
+
+void takeRow() {
+    repeat(6) {
+        moveForward();
+        pickBeeper();
+    }
+}
+
+void toTheLeft() {
+    repeat(2) {
+        moveForward();
+        turnLeft();
+    }
+}
+
+void toTheRight() {
+    repeat(2) {
+        moveForward();
+        turnRight();
+    }
+}
+
+void takeFiveRows() {
+    repeat(2) {
+        takeRow();
+        toTheLeft();
+        takeRow();
+        toTheRight();
+    }
+    takeRow();
+    toTheLeft();
+}
