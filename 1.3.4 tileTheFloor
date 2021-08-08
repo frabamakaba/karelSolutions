@@ -1,0 +1,20 @@
+void tileTheFloor() {
+    repeat(19) {
+        takeRow();
+        if(!frontIsClear() || beeperAhead()) {
+            turnLeft();
+        } if(frontIsClear() && beeperAhead()) {
+            dropBeeper();
+            moveForward();
+        }
+    }
+}
+
+void takeRow() {
+    repeat(9) {
+        if(frontIsClear() && !beeperAhead()) {
+            dropBeeper();
+            moveForward();
+        }
+    }
+}
