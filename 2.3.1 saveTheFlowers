@@ -1,0 +1,33 @@
+void saveTheFlowers() {
+    climbUp();
+    dropBeeper();
+    climbDown();
+}
+
+void climbUp() {
+    while(!frontIsClear()) {
+        turnLeft();
+        while(!rightIsClear()) {
+            moveForward();
+        }
+        turnRight();
+        moveForward();
+        if(onBeeper()) {
+            pickBeeper();
+        }
+    }
+}
+
+void climbDown() {
+    while(!rightIsClear() && frontIsClear()) {
+        moveForward();
+        turnRight();
+        while(frontIsClear()) {
+            moveForward();
+        }
+        turnLeft();
+        if(frontIsClear()) {
+            dropBeeper();
+        }
+    }
+}
