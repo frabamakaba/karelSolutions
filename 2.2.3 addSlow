@@ -1,0 +1,46 @@
+void addSlow() {
+    while(!rightIsClear()) {
+        firstRow();
+        while(rightIsClear()) {
+            secondRow();
+        }
+    }
+}
+
+void firstRow() {
+    decrement();
+    turnAround();
+    while(frontIsClear()) {
+        moveForward();
+    }
+    turnRight();
+    moveForward();
+    turnRight();
+}
+
+void secondRow() {
+    increment();
+    turnAround();
+    while(frontIsClear()) {
+        moveForward();
+    }
+    turnLeft();
+    moveForward();
+    turnLeft();
+}
+
+void decrement() {
+    while(!onBeeper()) {
+        dropBeeper();
+        moveForward();
+    }
+    pickBeeper();
+}
+
+void increment() {
+    while(onBeeper()) {
+        pickBeeper();
+        moveForward();
+    }
+    dropBeeper();
+}
